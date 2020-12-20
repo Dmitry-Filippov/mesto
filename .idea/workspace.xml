@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3ea6752d-e559-47b0-bbfb-e1d9e3d76ed6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/mesto.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/content/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/elements/__image/elements__image.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/elements/__item-description/elements__item-description.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/elements/__item/elements__item.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/elements/__like-button/active/elements__like-button__active.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/elements/__like-button/elements__like-button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/elements/__title/elements__title.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/elements/elements.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/footer/__text/footer__text.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/footer/footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/header/header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/logo/logo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/page/page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/pop-up-container/opened/pop-up-container_opened.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/pop-up-container/pop-up-container.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/pop-up/__close/pop-up__close.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/pop-up/__input/pop-up__input.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/pop-up/__submit/pop-up__submit.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/pop-up/__title/pop-up__title.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/pop-up/pop-up.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/profile/__add-button/profile__add-button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/profile/__avatar/profile__avatar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/profile/__button/profile__button.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/profile/__container/profile__container.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/profile/__info/profile__info.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/profile/__name/profile__name.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/profile/__text/profile__text.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/profile/profile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/images/addButton.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/images/closeButton.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/images/dombay.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/images/editButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/images/editButton.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/images/elbrus.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/images/karachaevsk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/images/likeButton.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/images/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/images/profile.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/normalize.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ltSglKef1Rz6CwL6HM8JDW3hBr" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3ea6752d-e559-47b0-bbfb-e1d9e3d76ed6" name="Default Changelist" comment="" />
+      <created>1608415009041</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608415009041</updated>
+      <workItem from="1608415010802" duration="2159000" />
+      <workItem from="1608472289153" duration="3606000" />
+      <workItem from="1608494382254" duration="2181000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

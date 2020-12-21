@@ -2,52 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ea6752d-e559-47b0-bbfb-e1d9e3d76ed6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/mesto.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/content/content.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/elements/__image/elements__image.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/elements/__item-description/elements__item-description.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/elements/__item/elements__item.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/elements/__like-button/active/elements__like-button__active.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/elements/__like-button/elements__like-button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/elements/__title/elements__title.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/elements/elements.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/footer/__text/footer__text.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/footer/footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/header/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/logo/logo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/page/page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/pop-up-container/opened/pop-up-container_opened.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/pop-up-container/pop-up-container.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/pop-up/__close/pop-up__close.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/pop-up/__input/pop-up__input.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/pop-up/__submit/pop-up__submit.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/pop-up/__title/pop-up__title.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/pop-up/pop-up.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/profile/__add-button/profile__add-button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/profile/__avatar/profile__avatar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/profile/__button/profile__button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/profile/__container/profile__container.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/profile/__info/profile__info.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/profile/__name/profile__name.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/profile/__text/profile__text.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/profile/profile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/images/addButton.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/images/closeButton.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/images/dombay.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/images/editButton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/images/editButton.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/images/elbrus.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/images/karachaevsk.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/images/likeButton.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/images/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/images/profile.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/normalize.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__name/profile__name.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__name/profile__name.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__text/profile__text.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__text/profile__text.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +14,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ltSglKef1Rz6CwL6HM8JDW3hBr" />
@@ -89,7 +53,18 @@
       <workItem from="1608415010802" duration="2159000" />
       <workItem from="1608472289153" duration="3606000" />
       <workItem from="1608494382254" duration="2181000" />
+      <workItem from="1608496861031" duration="162000" />
+      <workItem from="1608497054870" duration="96000" />
+      <workItem from="1608574352303" duration="1048000" />
     </task>
+    <task id="LOCAL-00001" summary="almost done">
+      <created>1608497002928</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608497002928</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,5 +81,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="almost done" />
+    <MESSAGE value="подключил normalise.css через импорт" />
+    <option name="LAST_COMMIT_MESSAGE" value="подключил normalise.css через импорт" />
   </component>
 </project>

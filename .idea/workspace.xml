@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3ea6752d-e559-47b0-bbfb-e1d9e3d76ed6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/elements/__like-button/active/elements__like-button__active.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/elements/__like-button/_active/elements__like-button_active.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/elements/__like-button/elements__like-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/elements/__like-button/elements__like-button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/pop-up-container/opened/pop-up-container_opened.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/pop-up-container/_opened/pop-up-container_opened.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +57,7 @@
       <workItem from="1608497054870" duration="96000" />
       <workItem from="1608574352303" duration="1048000" />
       <workItem from="1608579773960" duration="103000" />
+      <workItem from="1608582020356" duration="675000" />
     </task>
     <task id="LOCAL-00001" summary="almost done">
       <created>1608497002928</created>
@@ -70,7 +73,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608575855996</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="hotfixes/убрал повторяющуюся строку в pop__up_submit.css">
+      <created>1608582115305</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608582115305</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +129,7 @@
     <MESSAGE value="almost done" />
     <MESSAGE value="подключил normalise.css через импорт" />
     <MESSAGE value="check" />
-    <option name="LAST_COMMIT_MESSAGE" value="check" />
+    <MESSAGE value="hotfixes/убрал повторяющуюся строку в pop__up_submit.css" />
+    <option name="LAST_COMMIT_MESSAGE" value="hotfixes/убрал повторяющуюся строку в pop__up_submit.css" />
   </component>
 </project>

@@ -9,6 +9,7 @@
   top: -38px;
   right: -38px;
   cursor: pointer;
+  box-sizing: content-box;
 }
 
 .pop-up__close:active {

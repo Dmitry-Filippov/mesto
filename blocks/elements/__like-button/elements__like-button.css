@@ -1,8 +1,8 @@
 .elements__like-button {
   border: 0;
   background: 0;
-  width: 20.76px;
-  height: 18.13px;
+  width: 21px;
+  height: 19px;
   margin: 31px 22px 30px 0;
   background-image: url(../../../vendor/images/likeButton.svg);
   background-repeat: no-repeat;
@@ -12,6 +12,7 @@
 
 .elements__like-button:active {
   outline: 0;
+  background-image: url(../../../vendor/images/likeButtonActive.svg);
 }
 
 .elements__like-button:hover {

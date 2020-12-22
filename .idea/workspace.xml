@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ea6752d-e559-47b0-bbfb-e1d9e3d76ed6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/blocks/pop-up-container/opened/pop-up-container_opened.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/pop-up-container/_opened/pop-up-container_opened.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/wrapper/wrapper.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/header/__wraper/header__wrapper.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +59,8 @@
       <workItem from="1608579773960" duration="103000" />
       <workItem from="1608582020356" duration="954000" />
       <workItem from="1608662465775" duration="2084000" />
+      <workItem from="1608671580484" duration="97000" />
+      <workItem from="1608671888906" duration="186000" />
     </task>
     <task id="LOCAL-00001" summary="almost done">
       <created>1608497002928</created>
@@ -84,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608586006349</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="hotfixes">
+      <created>1608671620559</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608671620559</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +148,7 @@
     <MESSAGE value="check" />
     <MESSAGE value="hotfixes/убрал повторяющуюся строку в pop__up_submit.css" />
     <MESSAGE value="исправлена структура БЭМ" />
-    <option name="LAST_COMMIT_MESSAGE" value="исправлена структура БЭМ" />
+    <MESSAGE value="hotfixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="hotfixes" />
   </component>
 </project>

@@ -8,6 +8,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
+  transition: .3s;
 }
 
 .elements__like-button:active {

@@ -78,6 +78,3 @@ profileButton.addEventListener('click', openPopUp);
 popUpCloser.addEventListener('click', closePopUp);
 CardsAddButton.addEventListener('click', PopUpCardsAddOpenClose);
 popUpCardsAddCloser.addEventListener('click', PopUpCardsAddOpenClose);
-
-
-

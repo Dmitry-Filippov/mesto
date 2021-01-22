@@ -1,0 +1,4 @@
+.elements__like-button_liked {
+    background: url(../../../../vendor/images/likeButtonActive.svg);
+    background-repeat: no-repeat;
+}

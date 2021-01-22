@@ -1,16 +1,20 @@
+const profileButton = document.querySelector('.profile__button');
+const CardsAddButton = document.querySelector('.profile__add-button');
+const nameValue = document.querySelector('.profile__name');
+const jobValue = document.querySelector('.profile__text');
+const elements = document.querySelector('.elements');
+
 const popUpProfile = document.querySelector('.pop-up-container_type_profile');
 const formElement = popUpProfile.querySelector('.pop-up');
 const nameInput = formElement.querySelector('.pop-up__input_type_name');
 const jobInput = formElement.querySelector('.pop-up__input_type_job');
 const popUpCloser = formElement.querySelector('.pop-up__close');
-const profileButton = document.querySelector('.profile__button');
-const nameValue = document.querySelector('.profile__name');
-const jobValue = document.querySelector('.profile__text');
-const elements = document.querySelector('.elements');
 
 const popUpCardsAdd = document.querySelector('.pop-up-container_type_card-add');
-const CardsAddButton = document.querySelector('.profile__add-button');
+const cardsFormElement = popUpCardsAdd.querySelector('.pop-up');
 const popUpCardsAddCloser = popUpCardsAdd.querySelector('.pop-up__close');
+const cardNameInput = popUpCardsAdd.querySelector('.pop-up__input_type_card-name');
+const cardLinkInput = popUpCardsAdd.querySelector('.pop-up__input_type_card-link');
 
 const cardTemplate = document.querySelector('#li__template').content;
 
@@ -72,9 +76,19 @@ function PopUpCardsAddOpenClose() {
   popUpCardsAdd.classList.toggle('pop-up-container_opened');
 }
 
+function cardAdd(evt) {
+  evt.preventDefault();
+  let elementsItem = cardTemplate.cloneNode(true);
+  elementsItem.querySelector('.elements__image').src = cardLinkInput.value;
+  elementsItem.querySelector('.elements__image').alt = cardNameInput.value;
+  elementsItem.querySelector('.elements__title').textContent = cardNameInput.value;
+  elements.prepend(elementsItem);
+  PopUpCardsAddOpenClose();
+}
 
 formElement.addEventListener('submit', handleFormSubmit);
 profileButton.addEventListener('click', openPopUp);
 popUpCloser.addEventListener('click', closePopUp);
 CardsAddButton.addEventListener('click', PopUpCardsAddOpenClose);
 popUpCardsAddCloser.addEventListener('click', PopUpCardsAddOpenClose);
+cardsFormElement.addEventListener('submit', cardAdd);

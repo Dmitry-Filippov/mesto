@@ -51,6 +51,10 @@ const Cards = [
     elementsItem.querySelector('.elements__image').src = item.link;
     elementsItem.querySelector('.elements__image').alt = item.name;
     elementsItem.querySelector('.elements__title').textContent = item.name;
+    const deleteButton = elementsItem.querySelector('.elements__delete-button');
+    deleteButton.addEventListener('click', (evt) => {
+      evt.target.closest('.elements__item').remove();
+    })
     elements.append(elementsItem);
   });
 
@@ -82,6 +86,10 @@ function cardAdd(evt) {
   elementsItem.querySelector('.elements__image').src = cardLinkInput.value;
   elementsItem.querySelector('.elements__image').alt = cardNameInput.value;
   elementsItem.querySelector('.elements__title').textContent = cardNameInput.value;
+  const deleteButton = elementsItem.querySelector('.elements__delete-button');
+  deleteButton.addEventListener('click', (evt) => {
+    evt.target.closest('.elements__item').remove();
+  })
   elements.prepend(elementsItem);
   PopUpCardsAddOpenClose();
 }

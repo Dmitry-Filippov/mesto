@@ -55,6 +55,10 @@ const Cards = [
     deleteButton.addEventListener('click', (evt) => {
       evt.target.closest('.elements__item').remove();
     })
+    const likeButton = elementsItem.querySelector('.elements__like-button');
+    likeButton.addEventListener('click', (evt) => {
+      evt.target.classList.toggle('elements__like-button_liked');
+    })
     elements.append(elementsItem);
   });
 
@@ -90,6 +94,10 @@ function cardAdd(evt) {
   deleteButton.addEventListener('click', (evt) => {
     evt.target.closest('.elements__item').remove();
   })
+  const likeButton = elementsItem.querySelector('.elements__like-button');
+    likeButton.addEventListener('click', (evt) => {
+      evt.target.classList.toggle('elements__like-button_liked');
+    })
   elements.prepend(elementsItem);
   PopUpCardsAddOpenClose();
 }

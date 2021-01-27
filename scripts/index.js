@@ -24,57 +24,36 @@ const popUpImageCloser = popUpImage.querySelector('.pop-up__close');
 const cardTemplate = document.querySelector('#li__template').content;
 
 function addRemoveLike(evt) {
-    evt.target.classList.toggle('elements__like-button_liked');
+  evt.target.classList.toggle('elements__like-button_liked');
 };
 
 function deleteCard(evt) {
-    evt.target.closest('.elements__item').remove();
+  evt.target.closest('.elements__item').remove();
 };
 
 function openPopUp(popup) {
-    popup.classList.add('pop-up-container_opened');
+  popup.classList.add('pop-up-container_opened');
 };
 
 function closePopUp(popup) {
-    popup.classList.remove('pop-up-container_opened');
+  popup.classList.remove('pop-up-container_opened');
 };
 
 cards.forEach((item) => {
-  const elementsItem = cardTemplate.cloneNode(true);
-  const elementsImage = elementsItem.querySelector('.elements__image');
-  elementsImage.src = item.link;
-  elementsImage.alt = item.name;
-  elementsItem.querySelector('.elements__title').textContent = item.name;
-
-  const deleteButton = elementsItem.querySelector('.elements__delete-button');
-  deleteButton.addEventListener('click', deleteCard);
-
-  const likeButton = elementsItem.querySelector('.elements__like-button');
-  likeButton.addEventListener('click', addRemoveLike);
-
-  function openPopUpImage() {
-      openPopUp(popUpImage);
-      openedImage.src = item.link;
-      openedImage.alt = item.name;
-      imageText.textContent = item.name;
-  };
-
-  elementsItem.querySelector('.elements__image').addEventListener('click', openPopUpImage);
-
-  elements.append(elementsItem);
+  renderCard(createCard(item), elements);
 });
 
 function openPopUpProfile() {
-    nameInput.setAttribute('value', nameValue.textContent);
-    jobInput.setAttribute('value', jobValue.textContent);
-    openPopUp(popUpProfile);
+  nameInput.setAttribute('value', nameValue.textContent);
+  jobInput.setAttribute('value', jobValue.textContent);
+  openPopUp(popUpProfile);
 };
 function closePopUpProfile() {
-    closePopUp(popUpProfile);
+  closePopUp(popUpProfile);
 };
 
 function closePopUpImage() {
-    closePopUp(popUpImage);
+  closePopUp(popUpImage);
 };
 
 
@@ -86,13 +65,13 @@ function handleFormSubmit(evt) {
 }
 
 function openPopUpCardsAdd() {
-    openPopUp(popUpCardsAdd);
+  openPopUp(popUpCardsAdd);
 };
 function closePopUpCardsAdd() {
-    closePopUp(popUpCardsAdd);
+  closePopUp(popUpCardsAdd);
 };
 
-function cardAdd(evt) {
+function addCard(evt) {
   evt.preventDefault();
   const elementsItem = cardTemplate.cloneNode(true);
   const elementsImage = elementsItem.querySelector('.elements__image');
@@ -113,6 +92,7 @@ function cardAdd(evt) {
   })
   elements.prepend(elementsItem);
   closePopUpCardsAdd();
+  popUpCardsAdd.querySelector('.pop-up__form').reset();
 };
 
 formElement.addEventListener('submit', handleFormSubmit);
@@ -120,5 +100,37 @@ profileButton.addEventListener('click', openPopUpProfile);
 popUpCloser.addEventListener('click', closePopUpProfile);
 cardsAddButton.addEventListener('click', openPopUpCardsAdd);
 popUpCardsAddCloser.addEventListener('click', closePopUpCardsAdd);
-cardsFormElement.addEventListener('submit', cardAdd);
+cardsFormElement.addEventListener('submit', addCard);
 popUpImageCloser.addEventListener('click', closePopUpImage);
+
+
+
+
+function createCard(card) {
+  const elementsItem = cardTemplate.cloneNode(true);
+  const elementsImage = elementsItem.querySelector('.elements__image');
+  elementsImage.src = card.link;
+  elementsImage.alt = card.name;
+  elementsItem.querySelector('.elements__title').textContent = card.name;
+
+  const deleteButton = elementsItem.querySelector('.elements__delete-button');
+  deleteButton.addEventListener('click', deleteCard);
+
+  const likeButton = elementsItem.querySelector('.elements__like-button');
+  likeButton.addEventListener('click', addRemoveLike);
+
+  function openPopUpImage() {
+    openPopUp(popUpImage);
+    openedImage.src = card.link;
+    openedImage.alt = card.name;
+    imageText.textContent = card.name;
+  };
+
+  elementsItem.querySelector('.elements__image').addEventListener('click', openPopUpImage);
+
+  return elementsItem;
+}
+
+function renderCard(card, wrap) {
+  wrap.append(card);
+};

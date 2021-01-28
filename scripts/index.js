@@ -24,7 +24,7 @@ const popUpImageCloser = popUpImage.querySelector('.pop-up__close');
 
 const cardTemplate = document.querySelector('#li__template').content;
 
-function addRemoveLike(evt) {
+function toggleLike(evt) {
   evt.target.classList.toggle('elements__like-button_liked');
 };
 
@@ -45,8 +45,8 @@ cards.forEach((item) => {
 });
 
 function openPopUpProfile() {
-  nameInput.setAttribute('value', nameValue.textContent);
-  jobInput.setAttribute('value', jobValue.textContent);
+  nameInput.value = nameValue.textContent;
+  jobInput.value = jobValue.textContent;
   openPopUp(popUpProfile);
 };
 
@@ -57,25 +57,21 @@ function handleFormSubmit(evt) {
   closePopUp(popUpProfile);
 }
 
-function closePopUpCardsAdd() {
-  closePopUp(popUpCardsAdd);
-};
-
 function addCard(evt) {
   evt.preventDefault();
   const newCard = {};
   newCard.name = cardNameInput.value;
   newCard.link = cardLinkInput.value;
-  elements.prepend(createCard(newCard));
+  renderCard(createCard(newCard), elements);
   closePopUp(popUpCardsAdd);
   popUpCardsAddForm.reset();
 };
 
 function openPopUpImage(card) {
-  openPopUp(popUpImage);
   openedImage.src = card.link;
   openedImage.alt = card.name;
   imageText.textContent = card.name;
+  openPopUp(popUpImage);
 };
 
 function createCard(card) {
@@ -87,7 +83,7 @@ function createCard(card) {
   const deleteButton = elementsItem.querySelector('.elements__delete-button');
   deleteButton.addEventListener('click', deleteCard);
   const likeButton = elementsItem.querySelector('.elements__like-button');
-  likeButton.addEventListener('click', addRemoveLike);
+  likeButton.addEventListener('click', toggleLike);
   elementsItem.querySelector('.elements__image').addEventListener('click', () => {
     openPopUpImage(card);
   });
@@ -95,7 +91,7 @@ function createCard(card) {
 }
 
 function renderCard(card, wrap) {
-  wrap.append(card);
+  wrap.prepend(card);
 };
 
 formElement.addEventListener('submit', handleFormSubmit);

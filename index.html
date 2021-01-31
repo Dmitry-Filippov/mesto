@@ -54,8 +54,11 @@
     <div class="pop-up">
       <h2 class="pop-up__title">Новое место</h2>
       <form name="pop-up" class="pop-up__form pop-up__form_type_cards-add" novalidate>
-        <input class="pop-up__input pop-up__input_type_card-name" type="text" placeholder="Название" name="card-name" required>
-        <input class="pop-up__input pop-up__input_type_card-link" type="url" placeholder="Ссылка на картинку" name="card-link" required>
+        <input id="card-name-input" class="pop-up__input pop-up__input_type_card-name" type="text" placeholder="Название" name="card-name" 
+        required minlength="2" maxlength="20">
+        <span class="pop-up__input-error card-name-input-error"></span>
+        <input id="card-link-input" class="pop-up__input pop-up__input_type_card-link" type="url" placeholder="Ссылка на картинку" name="card-link" required>
+        <span class="pop-up__input-error card-link-input-error"></span>
         <button class="pop-up__submit" type="submit">Сохранить</button>
       </form>
       <button class="pop-up__close" type="button"></button>

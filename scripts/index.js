@@ -139,3 +139,11 @@ nameInput.addEventListener('input', () => {
 jobInput.addEventListener('input', () => {
   isValid(jobInput);
 })
+
+cardNameInput.addEventListener('input', () => {
+  isValid(cardNameInput);
+})
+
+cardLinkInput.addEventListener('input', () => {
+  isValid(cardLinkInput);
+})

@@ -6,12 +6,13 @@ const elements = document.querySelector('.elements');
 
 const popUpProfile = document.querySelector('.pop-up-container_type_profile');
 const formElement = popUpProfile.querySelector('.pop-up');
+const profileForm = formElement.querySelector('.pop-up__form_type_profile');
 const nameInput = formElement.querySelector('.pop-up__input_type_name');
 const jobInput = formElement.querySelector('.pop-up__input_type_job');
 const popUpCloser = formElement.querySelector('.pop-up__close');
 
 const popUpCardsAdd = document.querySelector('.pop-up-container_type_card-add');
-const popUpCardsAddForm = popUpCardsAdd.querySelector('.pop-up__form');
+const popUpCardsAddForm = popUpCardsAdd.querySelector('.pop-up__form_type_cards-add');
 const cardsFormElement = popUpCardsAdd.querySelector('.pop-up');
 const popUpCardsAddCloser = popUpCardsAdd.querySelector('.pop-up__close');
 const cardNameInput = popUpCardsAdd.querySelector('.pop-up__input_type_card-name');
@@ -94,6 +95,27 @@ function renderCard(card, wrap) {
   wrap.prepend(card);
 };
 
+function showInputError(element, errorMessage) {
+  const formError = element.closest('.pop-up__form').querySelector(`.${element.id}-error`);
+  element.classList.add('pop-up__input_type_error');
+  formError.textContent = errorMessage;
+  formError.classList.add('pop-up__input-error_active');
+};
+
+function hideInputError(element) {
+  const formError = element.closest('.pop-up__form').querySelector(`.${element.id}-error`);
+  element.classList.remove('pop-up__input_type_error');
+  formError.classList.remove('pop-up__input-error_active');
+}
+
+function isValid(input) {
+  if (input.validity.valid) {
+    hideInputError(input);
+  } else {
+    showInputError(input, input.validationMessage);
+  }
+}
+
 formElement.addEventListener('submit', handleFormSubmit);
 profileButton.addEventListener('click', openPopUpProfile);
 popUpCloser.addEventListener('click', () => {
@@ -110,4 +132,10 @@ popUpImageCloser.addEventListener('click', () => {
   closePopUp(popUpImage);
 });
 
+nameInput.addEventListener('input', () => {
+  isValid(nameInput);
+})
 
+jobInput.addEventListener('input', () => {
+  isValid(jobInput);
+})

@@ -7,12 +7,16 @@ const elements = document.querySelector('.elements');
 const popUpProfile = document.querySelector('.pop-up-container_type_profile');
 const formElement = popUpProfile.querySelector('.pop-up');
 const profileForm = formElement.querySelector('.pop-up__form_type_profile');
+const profileInputList = Array.from(profileForm.querySelectorAll('.pop-up__input'));
+const profileSubmitButton = profileForm.querySelector('.pop-up__submit');
 const nameInput = formElement.querySelector('.pop-up__input_type_name');
 const jobInput = formElement.querySelector('.pop-up__input_type_job');
 const popUpCloser = formElement.querySelector('.pop-up__close');
 
 const popUpCardsAdd = document.querySelector('.pop-up-container_type_card-add');
 const popUpCardsAddForm = popUpCardsAdd.querySelector('.pop-up__form_type_cards-add');
+const cardsAddInputList = Array.from(popUpCardsAddForm.querySelectorAll('.pop-up__input'));
+const cardsAddSubmitButton = popUpCardsAddForm.querySelector('.pop-up__submit');
 const cardsFormElement = popUpCardsAdd.querySelector('.pop-up');
 const popUpCardsAddCloser = popUpCardsAdd.querySelector('.pop-up__close');
 const cardNameInput = popUpCardsAdd.querySelector('.pop-up__input_type_card-name');
@@ -48,6 +52,9 @@ cards.forEach((item) => {
 function openPopUpProfile() {
   nameInput.value = nameValue.textContent;
   jobInput.value = jobValue.textContent;
+  toggleButtonState(profileInputList, profileSubmitButton);
+  isValid(nameInput);
+  isValid(jobInput);
   openPopUp(popUpProfile);
 };
 
@@ -116,6 +123,23 @@ function isValid(input) {
   }
 }
 
+function hasInvalidInput(inputList) {
+  return inputList.some((inputElement) => {
+    return !inputElement.validity.valid;
+  })
+}
+
+function toggleButtonState(inputList, buttonElement) {
+  console.log(inputList);
+  if (hasInvalidInput(inputList)) {
+    buttonElement.classList.remove('pop-up__submit_active');
+    console.log(true);
+  } else {
+    buttonElement.classList.add('pop-up__submit_active');
+    console.log(false);
+  }
+}
+
 formElement.addEventListener('submit', handleFormSubmit);
 profileButton.addEventListener('click', openPopUpProfile);
 popUpCloser.addEventListener('click', () => {
@@ -123,6 +147,9 @@ popUpCloser.addEventListener('click', () => {
 });
 cardsAddButton.addEventListener('click', () => {
   openPopUp(popUpCardsAdd);
+  isValid(cardNameInput);
+  isValid(cardLinkInput);
+  toggleButtonState(cardsAddInputList, cardsAddSubmitButton);
 });
 popUpCardsAddCloser.addEventListener('click', () => {
   closePopUp(popUpCardsAdd);
@@ -134,16 +161,20 @@ popUpImageCloser.addEventListener('click', () => {
 
 nameInput.addEventListener('input', () => {
   isValid(nameInput);
+  toggleButtonState(profileInputList, profileSubmitButton);
 })
 
 jobInput.addEventListener('input', () => {
   isValid(jobInput);
+  toggleButtonState(profileInputList, profileSubmitButton);
 })
 
 cardNameInput.addEventListener('input', () => {
   isValid(cardNameInput);
+  toggleButtonState(cardsAddInputList, cardsAddSubmitButton);
 })
 
 cardLinkInput.addEventListener('input', () => {
   isValid(cardLinkInput);
+  toggleButtonState(cardsAddInputList, cardsAddSubmitButton);
 })

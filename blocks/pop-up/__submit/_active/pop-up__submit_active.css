@@ -1,0 +1,12 @@
+.pop-up__submit_active {
+    border: 0;
+    background: #000;
+    color: #fff;
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+.pop-up__submit_active:hover {
+    opacity: .8;
+  }

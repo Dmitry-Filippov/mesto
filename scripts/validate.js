@@ -26,12 +26,9 @@ function showInputError(element, errorMessage) {
   }
   
   function toggleButtonState(inputList, buttonElement) {
-    console.log(inputList);
     if (hasInvalidInput(inputList)) {
       buttonElement.classList.remove('pop-up__submit_active');
-      console.log(true);
     } else {
       buttonElement.classList.add('pop-up__submit_active');
-      console.log(false);
     }
   }

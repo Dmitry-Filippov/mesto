@@ -90,6 +90,15 @@ function closePopUpOverlay (evt) {
   }
 }
 
+function closePopUpEsc (evt) {
+  if (evt.key === 'Escape') {
+    evt.preventDefault();
+    closePopUp(popUpProfile);
+    closePopUp(popUpImage);
+    closePopUp(popUpCardsAdd);
+  }
+}
+
 function createCard(card) {
   const elementsItem = cardTemplate.cloneNode(true);
   const elementsImage = elementsItem.querySelector('.elements__image');
@@ -148,3 +157,5 @@ cardLinkInput.addEventListener('input', () => {
   isValid(cardLinkInput);
   toggleButtonState(cardsAddInputList, cardsAddSubmitButton);
 })
+
+document.addEventListener('keypress', closePopUpEsc);

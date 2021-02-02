@@ -39,10 +39,12 @@ function deleteCard(evt) {
 
 function openPopUp(popup) {
   popup.classList.add('pop-up-container_opened');
+  popup.addEventListener('click', closePopUpOverlay);
 };
 
 function closePopUp(popup) {
   popup.classList.remove('pop-up-container_opened');
+  popup.removeEventListener('click', closePopUpOverlay);
 };
 
 cards.forEach((item) => {
@@ -82,6 +84,12 @@ function openPopUpImage(card) {
   openPopUp(popUpImage);
 };
 
+function closePopUpOverlay (evt) {
+  if (evt.target.classList.contains('pop-up-container')) {
+    closePopUp(evt.target);
+  }
+}
+
 function createCard(card) {
   const elementsItem = cardTemplate.cloneNode(true);
   const elementsImage = elementsItem.querySelector('.elements__image');
@@ -101,8 +109,6 @@ function createCard(card) {
 function renderCard(card, wrap) {
   wrap.prepend(card);
 };
-
-
 
 formElement.addEventListener('submit', handleFormSubmit);
 profileButton.addEventListener('click', openPopUpProfile);

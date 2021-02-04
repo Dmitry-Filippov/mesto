@@ -39,12 +39,14 @@ function deleteCard(evt) {
 
 function openPopUp(popup) {
   popup.classList.add('pop-up-container_opened');
-  popup.addEventListener('click', closePopUpOverlay);
+  popup.addEventListener('click', closeByOverlay);
+  document.addEventListener('keydown', closeByEscape);
 };
 
 function closePopUp(popup) {
   popup.classList.remove('pop-up-container_opened');
-  popup.removeEventListener('click', closePopUpOverlay);
+  popup.removeEventListener('click', closeByOverlay);
+  document.removeEventListener('keydown', closeByEscape);
 };
 
 cards.forEach((item) => {
@@ -54,9 +56,6 @@ cards.forEach((item) => {
 function openPopUpProfile() {
   nameInput.value = nameValue.textContent;
   jobInput.value = jobValue.textContent;
-  toggleButtonState(profileInputList, profileSubmitButton);
-  isValid(nameInput);
-  isValid(jobInput);
   openPopUp(popUpProfile);
 };
 
@@ -84,18 +83,17 @@ function openPopUpImage(card) {
   openPopUp(popUpImage);
 };
 
-function closePopUpOverlay (evt) {
+function closeByOverlay (evt) {
   if (evt.target.classList.contains('pop-up-container')) {
     closePopUp(evt.target);
   }
 }
 
-function closePopUpEsc (evt) {
+function closeByEscape (evt) {
   if (evt.key === 'Escape') {
     evt.preventDefault();
-    closePopUp(popUpProfile);
-    closePopUp(popUpImage);
-    closePopUp(popUpCardsAdd);
+    const openedPopUp = document.querySelector('.pop-up-container_opened');
+    closePopUp(openedPopUp);
   }
 }
 
@@ -126,9 +124,6 @@ popUpCloser.addEventListener('click', () => {
 });
 cardsAddButton.addEventListener('click', () => {
   openPopUp(popUpCardsAdd);
-  isValid(cardNameInput);
-  isValid(cardLinkInput);
-  toggleButtonState(cardsAddInputList, cardsAddSubmitButton);
 });
 popUpCardsAddCloser.addEventListener('click', () => {
   closePopUp(popUpCardsAdd);
@@ -137,25 +132,3 @@ cardsFormElement.addEventListener('submit', addCard);
 popUpImageCloser.addEventListener('click', () => {
   closePopUp(popUpImage);
 });
-
-nameInput.addEventListener('input', () => {
-  isValid(nameInput);
-  toggleButtonState(profileInputList, profileSubmitButton);
-})
-
-jobInput.addEventListener('input', () => {
-  isValid(jobInput);
-  toggleButtonState(profileInputList, profileSubmitButton);
-})
-
-cardNameInput.addEventListener('input', () => {
-  isValid(cardNameInput);
-  toggleButtonState(cardsAddInputList, cardsAddSubmitButton);
-})
-
-cardLinkInput.addEventListener('input', () => {
-  isValid(cardLinkInput);
-  toggleButtonState(cardsAddInputList, cardsAddSubmitButton);
-})
-
-document.addEventListener('keypress', closePopUpEsc);

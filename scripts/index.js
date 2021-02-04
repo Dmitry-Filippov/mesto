@@ -6,17 +6,12 @@ const elements = document.querySelector('.elements');
 
 const popUpProfile = document.querySelector('.pop-up-container_type_profile');
 const formElement = popUpProfile.querySelector('.pop-up');
-const profileForm = formElement.querySelector('.pop-up__form_type_profile');
-const profileInputList = Array.from(profileForm.querySelectorAll('.pop-up__input'));
-const profileSubmitButton = profileForm.querySelector('.pop-up__submit');
 const nameInput = formElement.querySelector('.pop-up__input_type_name');
 const jobInput = formElement.querySelector('.pop-up__input_type_job');
 const popUpCloser = formElement.querySelector('.pop-up__close');
 
 const popUpCardsAdd = document.querySelector('.pop-up-container_type_card-add');
 const popUpCardsAddForm = popUpCardsAdd.querySelector('.pop-up__form_type_cards-add');
-const cardsAddInputList = Array.from(popUpCardsAddForm.querySelectorAll('.pop-up__input'));
-const cardsAddSubmitButton = popUpCardsAddForm.querySelector('.pop-up__submit');
 const cardsFormElement = popUpCardsAdd.querySelector('.pop-up');
 const popUpCardsAddCloser = popUpCardsAdd.querySelector('.pop-up__close');
 const cardNameInput = popUpCardsAdd.querySelector('.pop-up__input_type_card-name');

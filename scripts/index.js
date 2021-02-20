@@ -1,3 +1,5 @@
+import { Card } from './Card.js';
+
 const profileButton = document.querySelector('.profile__button');
 const cardsAddButton = document.querySelector('.profile__add-button');
 const nameValue = document.querySelector('.profile__name');

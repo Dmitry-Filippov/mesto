@@ -37,16 +37,13 @@
     
     function toggleButtonState(inputList, buttonElement) {
       if (hasInvalidInput(inputList)) {
-        console.log('no');
         buttonElement.classList.remove(obj.activeButtonClass);
       } else {
-        console.log('yes');
         buttonElement.classList.add(obj.activeButtonClass);
       }
     }
 
     function setEventListener(formElement) {
-      console.log('setEventListener');
       const inputList = Array.from(formElement.querySelectorAll(obj.formInputSelector));
       const buttonElement = formElement.querySelector(obj.submitButtonSelector);
       inputList.forEach((inputElement) => {

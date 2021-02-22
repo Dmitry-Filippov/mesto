@@ -1,4 +1,5 @@
 import { Card } from './Card.js';
+import { FormValidator } from './FormValidator.js';
 
 const profileButton = document.querySelector('.profile__button');
 const cardsAddButton = document.querySelector('.profile__add-button');
@@ -23,6 +24,19 @@ export const popUpImage = document.querySelector('.pop-up-container_type_image')
 export const openedImage = popUpImage.querySelector('.pop-up__image');
 export const imageText = popUpImage.querySelector('.pop-up__text');
 const popUpImageCloser = popUpImage.querySelector('.pop-up__close');
+
+const formObj = {
+  formSelector: '.pop-up__form',
+  inputErrorClass: 'pop-up__input_type_error',
+  errorClass: 'pop-up__input-error_active',
+  activeButtonClass: 'pop-up__submit_active',
+  formInputSelector: '.pop-up__input',
+  submitButtonSelector: '.pop-up__submit'
+}
+const ProfileForm = new FormValidator(formObj, formElement);
+ProfileForm.enableValidation();
+const cardsAddForm = new FormValidator(formObj, popUpCardsAddForm);
+cardsAddForm.enableValidation();
 
 const cardTemplate = document.querySelector('#li__template');
 

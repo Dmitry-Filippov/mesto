@@ -1,3 +1,5 @@
+import {openPopUp, openedImage, imageText, popUpImage} from './index.js';
+
 export class Card {
   constructor(card, templateElement) {
     this._link = card.link;
@@ -5,13 +7,19 @@ export class Card {
     this._templateElement = templateElement;
   }
 
-  _createCard() {
-    const cardItem = this._templateElement.content.cloneNode(true);
-    const cardImage = cardItem.querySelector('.elements__image');
-    cardImage.src = this._link;
-    cardImage.alt = this._name;
-    cardItem.querySelector('.elements__title').textContent = this._name;
-    return cardItem;
+  _getTemplate() {
+    return this._templateElement.content.cloneNode(true);
+  }
+
+  createCard() {
+    this._element = this._getTemplate();
+    this._setEventListeners();
+
+    this._element.querySelector('.elements__image').src = this._link;
+    this._element.querySelector('.elements__image').alt = this._name;
+    this._element.querySelector('.elements__title').textContent = this._name;
+
+    return this._element;
   }
 
   _deleteCard(evt) {
@@ -23,6 +31,7 @@ export class Card {
   }
 
   _openPopUpImage() {
+    
     openedImage.src = this._link;
     openedImage.alt = this._name;
     imageText.textContent = this._name;
@@ -30,19 +39,17 @@ export class Card {
   }
 
   _setEventListeners() {
-    const cardElement = this._createCard;
-
-    const deleteButton = cardElement.querySelector('.elements__delete-button');
+    const deleteButton = this._element.querySelector('.elements__delete-button');
     deleteButton.addEventListener('click', (evt) => {
       this._deleteCard(evt);
     });
 
-    const likeButton = cardElement.querySelector('.elements__like-button');
+    const likeButton = this._element.querySelector('.elements__like-button');
     likeButton.addEventListener('click', (evt) => {
       this._toggleLike(evt);
     });
 
-    const cardImage = cardElement.querySelector('.elements__image');
+    const cardImage = this._element.querySelector('.elements__image');
     cardImage.addEventListener('click', () => {
       this._openPopUpImage();
     })

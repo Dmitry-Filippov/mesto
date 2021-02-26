@@ -1,10 +1,10 @@
-import {openPopUp, openedImage, imageText, popUpImage} from './index.js';
 
 export class Card {
-  constructor(card, templateElement) {
+  constructor(card, templateElement, handleCardClick) {
     this._link = card.link;
     this._name = card.name;
     this._templateElement = templateElement;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -30,13 +30,6 @@ export class Card {
     evt.target.classList.toggle('elements__like-button_liked');
   }
 
-  _openPopUpImage() {
-    
-    openedImage.src = this._link;
-    openedImage.alt = this._name;
-    imageText.textContent = this._name;
-    openPopUp(popUpImage);
-  }
 
   _setEventListeners() {
     const deleteButton = this._element.querySelector('.elements__delete-button');
@@ -51,7 +44,7 @@ export class Card {
 
     const cardImage = this._element.querySelector('.elements__image');
     cardImage.addEventListener('click', () => {
-      this._openPopUpImage();
+      this._handleCardClick(this._name, this._link);
     })
   }
 }

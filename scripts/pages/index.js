@@ -8,12 +8,6 @@ import UserInfo from '../components/UserInfo.js';
 import {profileButton, cardsAddButton, nameValue, jobValue, elements, popUpProfile, formElement, nameInput, jobInput, popUpCardsAdd, popUpCardsAddForm, 
   cardNameInput, cardLinkInput, popUpImage, formObj, cardTemplate} from '../utils/constants.js';
 
-const profileForm = new FormValidator(formObj, formElement);
-profileForm.enableValidation();
-const cardsAddForm = new FormValidator(formObj, popUpCardsAddForm);
-cardsAddForm.enableValidation();
-
-
 function handleFormSubmit(evt) {
   evt.preventDefault();
   nameValue.textContent = nameInput.value;
@@ -45,9 +39,8 @@ function handleCardClick(name, link) {
 
 
 profileButton.addEventListener('click', () => {
-  // nameValue.textContent = userInfo.getUserInfo().userName;
-  // jobValue.textContent = userInfo.getUserInfo().UserInfo;
-  console.log(userInfo.getUserInfo())
+  nameInput.value = userInfo.getUserInfo().userName;
+  jobInput.value = userInfo.getUserInfo().userInfo;
   popupWithFormProfile.open();
 });
 
@@ -55,6 +48,11 @@ cardsAddButton.addEventListener('click', () => {
   cardsAddForm.resetValidation();
   popupWithformCardsAdd.open()
 });
+
+const profileForm = new FormValidator(formObj, formElement);
+profileForm.enableValidation();
+const cardsAddForm = new FormValidator(formObj, popUpCardsAddForm);
+cardsAddForm.enableValidation();
 
 
 const defaultCards = new Section({items: cards, renderer: createCard}, elements);

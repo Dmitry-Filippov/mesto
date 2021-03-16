@@ -1,4 +1,6 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -17,4 +19,27 @@ module.exports = {
 
     open: true // сайт будет открываться сам при запуске npm run dev
   },
+  module: {
+    rules: [ // rules — это массив правил
+      // добавим в него объект правил для бабеля
+      {
+        // регулярное выражение, которое ищет все js файлы
+        test: /\.js$/,
+        // при обработке этих файлов нужно использовать babel-loader
+        use: 'babel-loader',
+        // исключает папку node_modules, файлы в ней обрабатывать не нужно
+        exclude: '/node_modules/'
+      },
+      {
+        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
+        type: 'asset/resource'
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    }),
+    new CleanWebpackPlugin()
+  ]
 }

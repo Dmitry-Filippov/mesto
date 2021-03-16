@@ -10,6 +10,11 @@ export default class PopupWithForm extends Popup {
 
   setEventListeners() {
     document.addEventListener('keydown', this._handleEscClose.bind(this));
+    document.addEventListener('click', (evt) => {
+      if (evt.target.classList.contains('pop-up-container')) {
+        this.close()
+      }
+    })
 
     this._popupSelector.querySelector('.pop-up__close').addEventListener('click', () => {
       this.close();

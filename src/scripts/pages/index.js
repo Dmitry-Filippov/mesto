@@ -5,9 +5,9 @@ import PopupWithImage from '../components/PopupWithImage.js';
 import Section from '../components/Section.js';
 import UserInfo from '../components/UserInfo.js';
 import {cards} from '../utils/initial-cards.js';
-
-import {profileButton, cardsAddButton, nameValue, jobValue, elements, popUpProfile, formElement, nameInput, jobInput, popUpCardsAdd, popUpCardsAddForm, 
-  cardNameInput, cardLinkInput, popUpImage, formObj, cardTemplate} from '../utils/constants.js';
+import {profileButton, cardsAddButton, nameValue, jobValue, elements, popUpProfile, formElement, nameInput, 
+  jobInput, popUpCardsAdd, popUpCardsAddForm, cardNameInput, cardLinkInput, popUpImage, formObj, cardTemplate} from '../utils/constants.js';
+import '../../pages/index.css';
 
 function handleFormSubmit(evt) {
   evt.preventDefault();

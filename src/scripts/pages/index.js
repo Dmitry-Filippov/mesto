@@ -24,14 +24,8 @@ function addCardSubmit(evt) {
   const newCard = {};
   newCard.name = cardNameInput.value;
   newCard.link = cardLinkInput.value;
-  new Section({items: [newCard], renderer: createCard}, elements).renderItems();
+  defaultCards.addItem(createCard(newCard));
 };
-
-// function closeByOverlay (evt) {
-//   if (evt.target.classList.contains('pop-up-container')) {
-//     closePopUp(evt.target);
-//   }
-// }
 
 
 function handleCardClick(name, link) {

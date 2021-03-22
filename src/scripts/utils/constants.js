@@ -1,5 +1,6 @@
 export const profileButton = document.querySelector('.profile__button');
 export const cardsAddButton = document.querySelector('.profile__add-button');
+export const profileAvatar = document.querySelector('.profile__avatar');
 export const nameValue = document.querySelector('.profile__name');
 export const jobValue = document.querySelector('.profile__text');
 export const elements = document.querySelector('.elements');

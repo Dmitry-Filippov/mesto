@@ -21,6 +21,7 @@ export const popUpImage = document.querySelector('.pop-up-container_type_image')
 export const openedImage = popUpImage.querySelector('.pop-up__image');
 export const imageText = popUpImage.querySelector('.pop-up__text');
 export const popUpImageCloser = popUpImage.querySelector('.pop-up__close');
+export const likesCount = elements.querySelector('.elements__likes-count');
 
 export const formObj = {
   formSelector: '.pop-up__form',

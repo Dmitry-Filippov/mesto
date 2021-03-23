@@ -60,5 +60,28 @@ export default class Api {
       }
       return Promise.reject(`Ошибка: ${res.status}`);
     })
+    .catch(err => {console.log(err)})
+  }
+
+  postCard(cardName, cardLink) {
+    return fetch(this._url, {
+      method: 'POST',
+      headers: {
+        authorization: 'ead2bc08-76d8-467e-bb45-32710c654284',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: cardName,
+        link: cardLink
+      })
+    })
+    .then((res) => {
+      console.log(res)
+      if(res.ok) {
+        return res.json()
+      }
+      return Promise.reject(`Ошибка: ${res.status}`);
+    })
+    .catch(err => {console.log(err)})
   }
 }

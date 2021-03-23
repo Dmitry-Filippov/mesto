@@ -12,8 +12,9 @@ import './index.css';
 
 function handleFormSubmit(evt) {
   evt.preventDefault();
-  nameValue.textContent = nameInput.value;
-  jobValue.textContent = jobInput.value;
+  userInfo.setUserInfo(nameInput.value, jobInput.value);
+  // nameValue.textContent = nameInput.value;
+  // jobValue.textContent = jobInput.value;
   userApi.patchUserInfo(nameInput.value, jobInput.value);
 }
 
@@ -26,7 +27,10 @@ function addCardSubmit(evt) {
   const newCard = {};
   newCard.name = cardNameInput.value;
   newCard.link = cardLinkInput.value;
-  defaultCards.addItem(createCard(newCard));
+  const card = new Section({items: newCard, renderer: createCard}, elements)
+  // card.renderItems();
+  card.addItem(createCard(newCard));
+  defCards.postCard(cardNameInput.value, cardLinkInput.value)
 };
 
 
@@ -81,4 +85,3 @@ defCards.getDefaultCards()
     const defaultCards = new Section({items: cards, renderer: createCard}, elements);
     defaultCards.renderItems();
   })
-

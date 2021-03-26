@@ -8,7 +8,7 @@ import Api from '../scripts/components/Api.js'
 import PopupWithSubmit from '../scripts/components/PopupWithSubmit.js';
 import {profileButton, cardsAddButton, nameValue, jobValue, elements, formElement, nameInput, 
   jobInput, popUpCardsAddForm, cardNameInput, cardLinkInput, formObj, cardTemplate, othersCardTemplate, profileAvatar, 
-  avatarLink, avatarElement, avatarForm, profileSubmitButton, avatarSubmitButton} from '../scripts/utils/constants.js';
+  avatarLink, avatarElement, avatarForm, profileSubmitButton, avatarSubmitButton, cardsAddSubmitButton} from '../scripts/utils/constants.js';
 import './index.css';
 
 function handleFormSubmit(evt) {
@@ -21,19 +21,21 @@ function handleFormSubmit(evt) {
 
 function createCard(item) {
   if(item.owner._id === '45c9f3fe8b1e70c890ea09c2') {
-    return new Card(item, cardTemplate, handleCardClick, handleDelClick, handleLikeClick).createCard();
+    return new Card(item, cardTemplate, handleCardClick, handleDelClick, handleLikeClick, handleRemoveLikeClick).createCard();
   } else {
-    return new Card(item, othersCardTemplate, handleCardClick, handleDelClick, handleLikeClick).createCard();
+    return new Card(item, othersCardTemplate, handleCardClick, handleDelClick, handleLikeClick, handleRemoveLikeClick).createCard();
   }
 }
 
 function addCardSubmit(evt) {
   evt.preventDefault();
+  cardsAddSubmitButton.textContent = 'Загрузка...';
   api.postCard(cardNameInput.value, cardLinkInput.value)
     .then(card => {
       const newCard = new Section({items: [card], renderer: createCard}, elements);
       newCard.renderItems();
     })
+  cardsAddSubmitButton.textContent = 'Сохранить';
 };
 
 
@@ -62,6 +64,10 @@ function handleAvatarUpdate(evt) {
 
 function handleLikeClick(cardItem) {
   api.addlikeCard(cardItem);
+}
+
+function handleRemoveLikeClick(cardItem) {
+  api.removeLikeCard(cardItem);
 }
 
 profileButton.addEventListener('click', () => {

@@ -23,6 +23,7 @@ export const popUpCardsAddForm = popUpCardsAdd.querySelector('.pop-up__form_type
 export const popUpCardsAddCloser = popUpCardsAdd.querySelector('.pop-up__close');
 export const cardNameInput = popUpCardsAdd.querySelector('.pop-up__input_type_card-name');
 export const cardLinkInput = popUpCardsAdd.querySelector('.pop-up__input_type_card-link');
+export const cardsAddSubmitButton = popUpCardsAdd.querySelector('.pop-up__submit');
 
 export const popUpImage = document.querySelector('.pop-up-container_type_image');
 export const openedImage = popUpImage.querySelector('.pop-up__image');

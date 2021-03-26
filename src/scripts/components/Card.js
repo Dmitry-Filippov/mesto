@@ -9,7 +9,8 @@ export default class Card {
     this._handleDelClick = handleDelClick;
     this._handleLikeClick = handleLikeClick;
     this._handleRemoveLikeClick = handleRemoveLikeClick;
-    // this._isLiked = true
+    this._isLiked = this._likes.includes();
+    this._likesCount = this._likes.length;
   }
 
   _getTemplate() {
@@ -24,7 +25,7 @@ export default class Card {
     this._element.querySelector('.elements__image').alt = this._name;
     this._element.querySelector('.elements__title').textContent = this._name;
     if(this._likes) {
-      this._element.querySelector('.elements__likes-count').textContent = this._likes.length;
+      this._element.querySelector('.elements__likes-count').textContent = this._likesCount;
     } else {
       this._element.querySelector('.elements__likes-count').textContent = '0'
     }
@@ -40,14 +41,19 @@ export default class Card {
   }
 
   _toggleLike(evt) {
-    // evt.target.classList.toggle('elements__like-button_liked');
-    console.log(this);
+    console.log(this)
     if(!this._isLiked) {
       evt.target.classList.add('elements__like-button_liked');
       this._handleLikeClick(this);
+      this._isLiked = !this._isLiked;
+      this._likesCount += 1;
+      evt.target.closest('.elements__like-container').querySelector('.elements__likes-count').textContent = this._likesCount;
     } else {
       evt.target.classList.remove('elements__like-button_liked');
-
+      this._handleRemoveLikeClick(this);
+      this._isLiked = !this._isLiked;
+      this._likesCount -= 1;
+      evt.target.closest('.elements__like-container').querySelector('.elements__likes-count').textContent = this._likesCount;
     }
   }
 

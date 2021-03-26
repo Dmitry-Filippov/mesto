@@ -1,0 +1,10 @@
+
+.profile__avatar-wrapper {
+    position: relative;
+  }
+  
+  
+  .profile__avatar-wrapper:hover {
+    background: #000;
+    opacity: .3;
+  }

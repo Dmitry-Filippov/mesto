@@ -1,0 +1,17 @@
+.profile__cursor {
+    background: url(../../../images/ProfileEdit.svg);
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    left: 47px;
+    top: 47px;
+    visibility: hidden;
+  }
+
+  .profile__wrapper {
+    position: relative;
+  }
+  
+  .profile__wrapper:hover .profile__cursor {
+    visibility: visible;
+  }

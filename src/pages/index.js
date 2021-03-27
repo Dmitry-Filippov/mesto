@@ -19,13 +19,11 @@ function handleFormSubmit(evt) {
       console.log(data.name, data.about)
       userInfo.setUserInfo(data.name, data.about)
     })
+    .then(() => {popupWithFormProfile.close()})
     .catch(err => {
       console.log(err)
     })
-    .finally(() => {
-      popupWithFormProfile.close();
-      profileSubmitButton.textContent = 'Сохранить';
-    })
+    .finally(() => {profileSubmitButton.textContent = 'Сохранить'})
 }
 
 function createCard(item) {
@@ -44,13 +42,11 @@ function addCardSubmit(evt) {
       const newCard = new Section({items: [card], renderer: createCard}, elements);
       newCard.renderItems();
     })
+    .then(() => {popupWithformCardsAdd.close()})
     .catch(err => {
       console.log(err)
     })
-    .finally(() => {
-      popupWithformCardsAdd.close();
-      cardsAddSubmitButton.textContent = 'Сохранить';
-    })
+    .finally(() => {cardsAddSubmitButton.textContent = 'Сохранить'})
 };
 
 
@@ -78,13 +74,11 @@ function handleAvatarUpdate(evt) {
     .then(data => {
       profileAvatar.src = data.avatar;
     })
+    .then(() => {popupWithFormAvatar.close()})
     .catch(err => {
       console.log(err);
     })
-    .finally(() => {
-      popupWithFormAvatar.close();
-      avatarSubmitButton.textContent = 'Сохранить';
-    })
+    .finally(() => {avatarSubmitButton.textContent = 'Сохранить'})
   
   
 }
@@ -94,6 +88,7 @@ function handleLikeClick(evt, cardItem) {
     .then(() => {
       cardItem.toggleLike(evt)
     })
+    .catch(err => {console.log(err)})
 }
 
 function handleRemoveLikeClick(evt, cardItem) {
@@ -101,6 +96,7 @@ function handleRemoveLikeClick(evt, cardItem) {
     .then(() => {
       cardItem.toggleLike(evt)
     })
+    .catch(err => {console.log(err)})
 }
 
 profileButton.addEventListener('click', () => {

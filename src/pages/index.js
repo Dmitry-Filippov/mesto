@@ -14,13 +14,22 @@ import './index.css';
 function handleFormSubmit(evt) {
   evt.preventDefault();
   profileSubmitButton.textContent = 'Загрузка...';
-  api.patchUserInfo(nameInput.value, jobInput.value);
-  userInfo.setUserInfo(nameInput.value, jobInput.value);
-  profileSubmitButton.textContent = 'Сохранить';
+  api.patchUserInfo(nameInput.value, jobInput.value)
+    .then(data => {
+      console.log(data.name, data.about)
+      userInfo.setUserInfo(data.name, data.about)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+    .finally(() => {
+      popupWithFormProfile.close();
+      profileSubmitButton.textContent = 'Сохранить';
+    })
 }
 
 function createCard(item) {
-  if(item.owner._id === '45c9f3fe8b1e70c890ea09c2') {
+  if(item.owner._id === userInfo._id) {
     return new Card(item, cardTemplate, handleCardClick, handleDelClick, handleLikeClick, handleRemoveLikeClick).createCard();
   } else {
     return new Card(item, othersCardTemplate, handleCardClick, handleDelClick, handleLikeClick, handleRemoveLikeClick).createCard();
@@ -35,7 +44,13 @@ function addCardSubmit(evt) {
       const newCard = new Section({items: [card], renderer: createCard}, elements);
       newCard.renderItems();
     })
-  cardsAddSubmitButton.textContent = 'Сохранить';
+    .catch(err => {
+      console.log(err)
+    })
+    .finally(() => {
+      popupWithformCardsAdd.close();
+      cardsAddSubmitButton.textContent = 'Сохранить';
+    })
 };
 
 
@@ -49,25 +64,43 @@ function handleDelClick(card, delButtonElement) {
 
 
 function handleDeleteSubmit(cardItem, cardElement) {
-  api.deleteCard(cardItem);
-  cardElement.remove();
+  api.deleteCard(cardItem)
+    .then(() => {
+      cardItem.deleteCard(cardElement);
+    })
+    .catch(err => {console.log(err)})
 }
 
 function handleAvatarUpdate(evt) {
   evt.preventDefault();
   avatarSubmitButton.textContent = 'Загрузка...';
-  api.patchAvatar(avatarLink.value);
-  profileAvatar.src = avatarLink.value;
-  avatarSubmitButton.textContent = 'Сохранить';
-  popupWithFormAvatar.close();
+  api.patchAvatar(avatarLink.value)
+    .then(data => {
+      profileAvatar.src = data.avatar;
+    })
+    .catch(err => {
+      console.log(err);
+    })
+    .finally(() => {
+      popupWithFormAvatar.close();
+      avatarSubmitButton.textContent = 'Сохранить';
+    })
+  
+  
 }
 
-function handleLikeClick(cardItem) {
-  api.addlikeCard(cardItem);
+function handleLikeClick(evt, cardItem) {
+  api.addlikeCard(cardItem)
+    .then(() => {
+      cardItem.toggleLike(evt)
+    })
 }
 
-function handleRemoveLikeClick(cardItem) {
-  api.removeLikeCard(cardItem);
+function handleRemoveLikeClick(evt, cardItem) {
+  api.removeLikeCard(cardItem)
+    .then(() => {
+      cardItem.toggleLike(evt)
+    })
 }
 
 profileButton.addEventListener('click', () => {
@@ -110,17 +143,27 @@ popupWithDelSubmit.setEventListeners();
 
 const userInfo = new UserInfo({userNameSelector: nameValue, userInfoSelector: jobValue});
 
-const api = new Api();
+const api = new Api({
+  url: 'https://mesto.nomoreparties.co/v1/cohort-21/',
+  token: 'ead2bc08-76d8-467e-bb45-32710c654284'
+});
 
-api.getUserInfo()
-  .then(data => {
-    profileAvatar.src = data.avatar;
-    nameValue.textContent = data.name;
-    jobValue.textContent = data.about;
-  })
 
-api.getDefaultCards()
-  .then(cards => {
-    const defaultCards = new Section({items: cards, renderer: createCard}, elements);
-    defaultCards.renderItems();
-  })
+  Promise.all([
+    api.getUserInfo(),
+    api.getDefaultCards()
+  ])
+    .then(values => {
+      console.log(values)
+      const userInformation = values[0];
+      const cardsData = values[1];
+      profileAvatar.src = userInformation.avatar;
+      nameValue.textContent = userInformation.name;
+      jobValue.textContent = userInformation.about;
+      userInfo._id = userInformation._id;
+      const defaultCards = new Section({items: cardsData, renderer: createCard}, elements);
+      defaultCards.renderItems();
+    })
+    .catch(err => {
+      console.log(err)
+    })

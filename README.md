@@ -8,8 +8,9 @@
 * Grid
 
 quick start:
+`
     npm install
     npm run dev
-
+`
 [Ссылка на Pages](https://dmitry-filippov.github.io/mesto/)
 

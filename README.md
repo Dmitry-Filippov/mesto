@@ -14,5 +14,6 @@ quick start:
 `npm run dev`
 
 
-[Ссылка на Pages](https://dmitry-filippov.github.io/mesto/)
+[Ссылка на Pages](https://dmitry-filippov.github.io/mesto/)  
+*проект выполнен в рамках учебной программы Я.Практикум*
 
